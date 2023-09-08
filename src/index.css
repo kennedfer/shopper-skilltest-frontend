@@ -1,0 +1,143 @@
+:root {
+  --table-width: 100vh;
+  --button-color: rgb(41, 66, 109);
+
+  width: 100vw;
+  height: 100vh;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: #fafafa;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+main {
+  overflow: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: var(--table-width);
+  max-height: 100vh;
+}
+
+table,
+th,
+td {
+  border: none;
+}
+
+td {
+  height: 30px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+
+  vertical-align: middle;
+}
+
+th {
+  font-weight: bold;
+  color: var(--button-color);
+}
+
+tr:nth-child(2n) {
+  background-color: rgb(238, 238, 238);
+}
+
+tr[class="price-error"] {
+  background-color: rgb(255, 125, 125);
+  border: 1px solid white;
+}
+
+tbody {
+  max-height: 100%; /* Garante que o corpo da tabela não exceda a altura máxima da tabela */
+  overflow-y: auto;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+}
+
+header {
+  display: flex;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+  visibility: hidden;
+  max-height: 0;
+}
+
+h1 {
+  font-size: 25px;
+
+  vertical-align: middle;
+  padding: 5px;
+}
+
+header > div {
+  flex-grow: 1;
+}
+
+.button {
+  padding: 12px;
+
+  background-color: var(--button-color);
+
+  border-radius: 10px;
+
+  font-weight: bolder;
+  font-size: 12px;
+
+  border: none;
+
+  color: white;
+}
+
+.bottom-button {
+  bottom: 0;
+
+  right: 0%;
+
+  position: absolute;
+
+  background-color: var(--button-color);
+  color: white;
+
+  padding: 15px;
+
+  text-align: center;
+
+  width: 100%;
+
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-aspect-ratio: 1) {
+  :root {
+    --table-width: 100vw;
+  }
+
+  .bottom-button {
+    visibility: hidden;
+  }
+
+  header {
+    visibility: visible;
+    max-height: 100%;
+    padding: 10px;
+  }
+}

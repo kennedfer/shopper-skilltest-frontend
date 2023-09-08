@@ -126,6 +126,16 @@ header > div {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
+.bottom-button:active {
+  background-color: rgb(103, 100, 146);
+  transform: translate(0, 2px);
+}
+
+.button:active {
+  background-color: rgb(103, 100, 146);
+  transform: translate(0, 2px);
+}
+
 @media screen and (min-aspect-ratio: 1) {
   :root {
     --table-width: 100vw;
